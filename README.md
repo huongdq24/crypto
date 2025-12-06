@@ -1,43 +1,56 @@
-# 💰 Crypto Portfolio Tracker
+# � Crypto Portfolio App
 
-A beautiful and modern cryptocurrency portfolio tracking application built with Flutter.
+A modern, feature-rich cryptocurrency portfolio tracking application built with Flutter. Track your crypto investments, view real-time price charts, and discover trending cryptocurrencies with a beautiful, intuitive interface.
 
-## 📱 Features
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 
-- **Real-time Price Tracking**: Live cryptocurrency prices from CoinGecko API
-- **Portfolio Management**: Track your crypto assets and total portfolio value
-- **Interactive Charts**: View detailed price charts with multiple timeframes (Day, Week, Month, 3M, 6M, Year)
-- **Market Analytics**: Monitor Low, High, Volume, and percentage changes
-- **Top Coins**: Browse and analyze top 10 cryptocurrencies
-- **Recommendations**: Get personalized coin recommendations
-- **Beautiful UI**: Modern gradient design with smooth animations
+## ✨ Features
 
-## 🎨 Screenshots
+### 🏠 Portfolio Management
+- **Real-time Portfolio Value**: Track your total crypto portfolio value with live updates
+- **Performance Metrics**: View your all-time gains/losses with percentage indicators
+- **Asset Overview**: Monitor individual cryptocurrency holdings with current values and 24h changes
+- **Multiple View Modes**: Switch between Main Portfolio, Top 10 Coins, and Experimental sections
 
-### Main Portfolio Screen
-- View total portfolio value with percentage gains
-- Quick access to Assets list
-- Recommended coins carousel
-- Clean, gradient yellow theme
+### 📊 Cryptocurrency Tracking
+- **Live Price Updates**: Real-time cryptocurrency prices from CoinGecko API
+- **Price Charts**: Interactive candlestick charts with multiple timeframes (D, W, M, 3M, 6M, Y)
+- **Sparkline Visualization**: Quick visual representation of price trends
+- **24H Statistics**: View Low, High, and Volume data for each cryptocurrency
 
-### Coin Details Screen
-- Detailed coin information with live prices
-- Interactive candlestick charts powered by Syncfusion
-- Multiple timeframe selection (D, W, M, 3M, 6M, Y)
-- Market statistics (Low, High, Volume)
-- News section
-- Add to portfolio functionality
+### 🎨 Modern UI/UX
+- **Gradient Backgrounds**: Beautiful, vibrant color schemes
+- **Card-based Design**: Clean, modern card layouts with subtle shadows
+- **Smooth Animations**: Fluid transitions and hover effects
+- **Responsive Design**: Optimized for various screen sizes
+- **Dark Mode Support**: Eye-friendly dark theme
 
-## 🚀 Technologies Used
+### 💡 Smart Recommendations
+- **Recommended Coins**: AI-curated list of trending cryptocurrencies
+- **Price Change Indicators**: Color-coded gains/losses for quick scanning
+- **Detailed Coin Views**: In-depth information for each cryptocurrency
 
-- **Framework**: Flutter 3.x
+## 📸 Screenshots
+
+### Home Screen
+![Home Screen](screenshots/home.png)
+*Portfolio overview with assets list and recommendations*
+
+### Coin Detail Screen
+![Coin Detail](screenshots/detail.png)
+*Detailed cryptocurrency view with charts and statistics*
+
+## �️ Tech Stack
+
+- **Framework**: Flutter 3.24.5
+- **Language**: Dart
 - **State Management**: StatefulWidget
-- **API**: CoinGecko API (Free tier)
 - **Charts**: 
-  - Syncfusion Flutter Charts (Candlestick charts)
-  - chart_sparkline (Mini line charts)
-- **HTTP**: http package for API calls
-- **UI Components**: Custom widgets with gradient designs
+  - syncfusion_flutter_charts (^27.2.5)
+  - chart_sparkline (^1.0.13)
+- **HTTP Client**: http (^1.2.2)
+- **API**: CoinGecko API
 
 ## 📦 Dependencies
 
@@ -45,16 +58,26 @@ A beautiful and modern cryptocurrency portfolio tracking application built with 
 dependencies:
   flutter:
     sdk: flutter
-  http: ^0.13.6
-  syncfusion_flutter_charts: ^latest
-  chart_sparkline: ^latest
+  cupertino_icons: ^1.0.8
+  http: ^1.2.2
+  syncfusion_flutter_charts: ^27.2.5
+  chart_sparkline: ^1.0.13
 ```
 
-## 🛠️ Setup
+## � Getting Started
+
+### Prerequisites
+
+- Flutter SDK (3.24.5 or higher)
+- Dart SDK
+- Android Studio / VS Code
+- Android Emulator or Physical Device
+
+### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/huongdq24/crypto.git
    cd crypto
    ```
 
@@ -64,75 +87,117 @@ dependencies:
    ```
 
 3. **Run the app**
+   
+   For Chrome (Web):
    ```bash
-   flutter run
+   flutter run -d chrome
+   ```
+   
+   For Android:
+   ```bash
+   flutter run -d android
    ```
 
-## 📊 API Information
+## 📱 Supported Platforms
 
-This app uses the **CoinGecko API** (free tier):
-- Base URL: `https://api.coingecko.com/api/v3/`
-- No API key required
-- Rate limiting: Please wait between requests
-- Endpoints used:
-  - `/coins/markets` - Get market data for coins
-  - `/coins/{id}/ohlc` - Get OHLC data for charts
+- ✅ Android
+- ✅ Web
+- ✅ Windows
+- ✅ macOS
+- ✅ iOS
 
 ## 🎯 Project Structure
 
 ```
 lib/
 ├── Model/
-│   ├── coinModel.dart       # Coin data model
-│   └── chartModel.dart      # Chart data model
+│   └── coinModel.dart          # Cryptocurrency data model
 ├── View/
-│   ├── home.dart           # Main portfolio screen
-│   ├── selectCoin.dart     # Coin details screen
 │   ├── Components/
-│   │   ├── item.dart       # Asset list item widget
-│   │   └── item2.dart      # Recommendation card widget
-└── main.dart               # App entry point
+│   │   ├── item.dart           # Asset list item component
+│   │   └── item2.dart          # Recommendation card component
+│   ├── home.dart               # Main portfolio screen
+│   ├── selectCoin.dart         # Coin detail screen
+│   └── anotherPage.dart        # Additional page
+└── main.dart                   # App entry point
+
+assets/
+└── image/
+    └── 11.png                  # User avatar image
 ```
 
-## 🎨 Design Features
+## 🔧 Configuration
 
-- **Gradient Backgrounds**: Beautiful yellow-gold gradient theme
-- **Rounded Containers**: Smooth corners with proper shadows
-- **Responsive Layout**: Adapts to different screen sizes
-- **Smooth Animations**: Chart animations and transitions
-- **Modern Typography**: Clear hierarchy and readable fonts
-- **Color Coding**: Green for gains, Red for losses
+### API Setup
 
-## 📝 Notes
+This app uses the CoinGecko API. No API key is required for basic functionality, but rate limits apply.
 
-- This app uses a **free API**, so please avoid sending multiple rapid requests
-- Internet connection is required for real-time data
-- Charts may take a moment to load depending on network speed
+**Note**: The free tier API has request limitations. Please wait between requests to avoid errors.
+
+### Postman Testing
+
+A comprehensive Postman collection is available in `POSTMAN_GUIDE.md` for API testing.
+
+## 🎨 Design Highlights
+
+### Color Palette
+- **Primary Gold**: `#FFD700` - Main accent color
+- **Orange Gradient**: `#FFA500` → `#FF8C00` - Background gradients
+- **Success Green**: `Colors.green.shade700` - Positive changes
+- **Error Red**: `Colors.red.shade700` - Negative changes
+- **Background**: White with subtle gradients
+
+### Typography
+- **Headers**: 22-24px, Bold
+- **Body**: 15-18px, Semi-bold
+- **Secondary**: 12-14px, Regular
+
+### Components
+- **Border Radius**: 12-24px for modern rounded corners
+- **Shadows**: Elevation 2-8 for depth
+- **Spacing**: Consistent 8px grid system
+
+## 🐛 Known Issues & Solutions
+
+- **Overflow Errors**: All layout overflow issues have been resolved
+- **API Rate Limiting**: Free API has request limits; implemented proper error handling
+- **Image Loading**: Added error builders for network images
+
+## � Future Enhancements
+
+- [ ] Add search functionality
+- [ ] Implement favorites/watchlist
+- [ ] Add price alerts
+- [ ] Portfolio performance analytics
+- [ ] Multi-currency support
+- [ ] Biometric authentication
+- [ ] Offline mode with caching
+- [ ] News integration
+- [ ] Trading functionality
 
 ## 👨‍💻 Developer
 
-Built by a Final-year Software Engineering student with expertise in:
-- Flutter & Dart Development
-- Cross-platform Mobile Applications
-- Clean Architecture & Design Patterns
-- State Management (BLoC, Provider)
-- Firebase Integration
-- API Integration
+**Duong Quoc Huong**
+
+Final-year Software Engineering student seeking Flutter Developer Intern position. Experienced in building production-ready cross-platform applications with BLoC state management, Firebase integration, and Clean Architecture.
 
 ## 📄 License
 
-This project is created for educational purposes.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🚧 Future Enhancements
+## � Acknowledgments
 
-- [ ] Add user authentication
-- [ ] Save portfolio data locally
-- [ ] Push notifications for price alerts
-- [ ] Multiple portfolio support
-- [ ] Dark mode theme
-- [ ] More detailed analytics
-- [ ] Favorite coins feature
+- [CoinGecko API](https://www.coingecko.com/en/api) for cryptocurrency data
+- [Syncfusion](https://www.syncfusion.com/flutter-widgets) for chart components
+- Flutter community for excellent packages and support
+
+## 📞 Contact
+
+For questions or feedback, please reach out:
+
+- GitHub: [@huongdq24](https://github.com/huongdq24)
+- Repository: [crypto](https://github.com/huongdq24/crypto)
 
 ---
 
-**Cryptocurrency Portfolio Tracker** - Track your crypto investments beautifully 💎
+⭐ **Star this repo if you find it helpful!** ⭐
