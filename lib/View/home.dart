@@ -23,206 +23,267 @@ class _HomeState extends State<Home> {
     double myHeight = MediaQuery.of(context).size.height;
     double myWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
-        height: myHeight,
-        width: myWidth,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color.fromARGB(255, 253, 225, 112),
-                Color(0xffFBC700),
-              ]),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: myHeight * 0.03),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: myWidth * 0.02, vertical: myHeight * 0.005),
-                    decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Text(
-                      'Main portfolio',
-                      style: TextStyle(fontSize: 18),
+      body: SafeArea(
+        child: Container(
+          height: myHeight,
+          width: myWidth,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xffFFD700),
+                  Color(0xffFFA500),
+                  Color(0xffFF8C00),
+                ],
+                stops: [
+                  0.0,
+                  0.5,
+                  1.0
+                ]),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    vertical: myHeight * 0.025, horizontal: myWidth * 0.04),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: myWidth * 0.045,
+                          vertical: myHeight * 0.01),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.15),
+                                blurRadius: 12,
+                                offset: Offset(0, 4),
+                                spreadRadius: 0)
+                          ]),
+                      child: Text(
+                        'Main portfolio',
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xffFF8C00),
+                            letterSpacing: 0.3),
+                      ),
                     ),
-                  ),
-                  Text(
-                    'Top 10 coins',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  Text(
-                    'Exprimental',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: myWidth * 0.07),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '\$ 7,466.20',
-                    style: TextStyle(fontSize: 35),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(myWidth * 0.02),
-                    height: myHeight * 0.05,
-                    width: myWidth * 0.1,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white.withOpacity(0.5)),
-                    child: Image.asset(
-                      'assets/icons/5.1.png',
+                    Text(
+                      'Top 10 coins',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white.withOpacity(0.85)),
                     ),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: myWidth * 0.07),
-              child: Row(
-                children: [
-                  Text(
-                    '+162% all time',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: myHeight * 0.02,
-            ),
-            Container(
-              height: myHeight * 0.7,
-              width: myWidth,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        blurRadius: 5,
-                        color: Colors.grey.shade300,
-                        spreadRadius: 3,
-                        offset: Offset(0, 3))
+                    Text(
+                      'Experimental',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white.withOpacity(0.85)),
+                    ),
                   ],
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50),
-                    topRight: Radius.circular(50),
-                  )),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: myHeight * 0.03,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: myWidth * 0.08),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: myWidth * 0.07),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Assets',
-                          style: TextStyle(fontSize: 20),
+                          '\$ 7,466.20',
+                          style: TextStyle(
+                              fontSize: 42,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              shadows: [
+                                Shadow(
+                                    blurRadius: 4,
+                                    color: Colors.black.withOpacity(0.1),
+                                    offset: Offset(2, 2))
+                              ]),
                         ),
-                        Icon(Icons.add)
+                        SizedBox(height: myHeight * 0.005),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: myWidth * 0.025,
+                              vertical: myHeight * 0.004),
+                          decoration: BoxDecoration(
+                              color: Colors.green.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(12)),
+                          child: Text(
+                            '+162% all time',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.green.shade800),
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                  SizedBox(
-                    height: myHeight * 0.02,
-                  ),
-                  Container(
-                    height: myHeight * 0.36,
-                    child: isRefreshing == true
-                        ? Center(
-                            child: CircularProgressIndicator(
-                              color: Color(0xffFBC700),
+                    Container(
+                      padding: EdgeInsets.all(myWidth * 0.03),
+                      height: myHeight * 0.055,
+                      width: myHeight * 0.055,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.15),
+                                blurRadius: 10,
+                                offset: Offset(0, 4))
+                          ]),
+                      child: Image.asset(
+                        'assets/icons/5.1.png',
+                        color: Color(0xffFBC700),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: myHeight * 0.01,
+              ),
+              Expanded(
+                child: Container(
+                  width: myWidth,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            blurRadius: 20,
+                            color: Colors.black.withOpacity(0.1),
+                            spreadRadius: 0,
+                            offset: Offset(0, -5))
+                      ],
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50),
+                        topRight: Radius.circular(50),
+                      )),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: myHeight * 0.02,
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: myWidth * 0.06),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Assets',
+                              style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black87,
+                                  letterSpacing: 0.5),
                             ),
-                          )
-                        : coinMarket == null || coinMarket!.length == 0
-                            ? Padding(
-                                padding: EdgeInsets.all(myHeight * 0.06),
-                                child: Center(
-                                  child: Text(
-                                    'Attention this Api is free, so you cannot send multiple requests per second, please wait and try again later.',
-                                    style: TextStyle(fontSize: 18),
-                                  ),
+                            Icon(Icons.add)
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: myHeight * 0.015,
+                      ),
+                      Container(
+                        height: myHeight * 0.32,
+                        child: isRefreshing == true
+                            ? Center(
+                                child: CircularProgressIndicator(
+                                  color: Color(0xffFBC700),
                                 ),
                               )
-                            : ListView.builder(
-                                itemCount: 4,
-                                shrinkWrap: true,
-                                physics: NeverScrollableScrollPhysics(),
-                                itemBuilder: (context, index) {
-                                  return Item(
-                                    item: coinMarket![index],
-                                  );
-                                },
-                              ),
-                  ),
-                  SizedBox(
-                    height: myHeight * 0.02,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: myWidth * 0.05),
-                    child: Row(
-                      children: [
-                        Text(
-                          'Recommend to Buy',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: myHeight * 0.01,
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: myWidth * 0.03),
-                      child: isRefreshing == true
-                          ? Center(
-                              child: CircularProgressIndicator(
-                                color: Color(0xffFBC700),
-                              ),
-                            )
-                          : coinMarket == null || coinMarket!.length == 0
-                              ? Padding(
-                                  padding: EdgeInsets.all(myHeight * 0.06),
-                                  child: Center(
-                                    child: Text(
-                                      'Attention this Api is free, so you cannot send multiple requests per second, please wait and try again later.',
-                                      style: TextStyle(fontSize: 18),
+                            : coinMarket == null || coinMarket!.length == 0
+                                ? Padding(
+                                    padding: EdgeInsets.all(myHeight * 0.06),
+                                    child: Center(
+                                      child: Text(
+                                        'Attention this Api is free, so you cannot send multiple requests per second, please wait and try again later.',
+                                        style: TextStyle(fontSize: 18),
+                                      ),
                                     ),
+                                  )
+                                : ListView.builder(
+                                    itemCount: 4,
+                                    shrinkWrap: true,
+                                    physics: NeverScrollableScrollPhysics(),
+                                    itemBuilder: (context, index) {
+                                      return Item(
+                                        item: coinMarket![index],
+                                      );
+                                    },
+                                  ),
+                      ),
+                      SizedBox(
+                        height: myHeight * 0.015,
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: myWidth * 0.06),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Recommend to Buy',
+                              style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black87,
+                                  letterSpacing: 0.5),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: myHeight * 0.01,
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: myWidth * 0.03, bottom: myHeight * 0.01),
+                          child: isRefreshing == true
+                              ? Center(
+                                  child: CircularProgressIndicator(
+                                    color: Color(0xffFBC700),
                                   ),
                                 )
-                              : ListView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: coinMarket!.length,
-                                  itemBuilder: (context, index) {
-                                    return Item2(
-                                      item: coinMarket![index],
-                                    );
-                                  },
-                                ),
-                    ),
+                              : coinMarket == null || coinMarket!.length == 0
+                                  ? Padding(
+                                      padding: EdgeInsets.all(myHeight * 0.06),
+                                      child: Center(
+                                        child: Text(
+                                          'Attention this Api is free, so you cannot send multiple requests per second, please wait and try again later.',
+                                          style: TextStyle(fontSize: 18),
+                                        ),
+                                      ),
+                                    )
+                                  : ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: coinMarket!.length,
+                                      itemBuilder: (context, index) {
+                                        return Item2(
+                                          item: coinMarket![index],
+                                        );
+                                      },
+                                    ),
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    height: myHeight * 0.01,
-                  ),
-                ],
-              ),
-            )
-          ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
